@@ -7,8 +7,8 @@ Maintainer: Noam Ross <noam.ross@gmail.com>
 URL: https://github.com/noamross/balleRs
 License: MIT
 Depends:
-    knitr,
-    bibtex
+    plyr,
+    pander
 Collate:
     'search_in_bioC_packages.R'
     'search_in_CRAN_packages.R'
