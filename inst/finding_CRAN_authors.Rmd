@@ -14,5 +14,5 @@ The function takes a vector of strings and returns a nicely formatted table (in 
 search_in_CRAN_packages(c("UC Davis", "ucdavis.edu"))
 ```
 
-I've put this function as the start of a package called "balleRs" on github
+I've put this function as the start of a package called "balleRs" on github.  I want to add a bunch of other tools to find poweR users on the web, such as scraping the R-help archives, Stack Overflow, and Cross-Validated.  Next: Bioconductor authors!
 

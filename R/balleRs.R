@@ -3,7 +3,7 @@ names <- c("UC Davis", "ucdavis.edu")
 #' @import plyr
 #' @import pander
 #' @export
-search_in_CRAN_packages <- function(names) {
+search_in_CRAN_packages <- function(names, pandoc=TRUE) {
 
   mytemp <- tempfile()
   message("Downloading latest data on repositories...")
@@ -20,5 +20,9 @@ search_in_CRAN_packages <- function(names) {
   Matches <- aaply(1:length(matches), 1, function(x) paste("\n", names(mydata)[which(rows[x,])],": ", mydata[x,which(rows[x,])],sep="", collapse="\n" ))
   output <- cbind(mydata[,c("Package","Title")], Matches)
   rownames(output) <- NULL
-  pandoc.table(output, split.tables=Inf)
+  if(pandoc) {
+    pandoc.table(output, split.tables=Inf)
+  } else {
+    mydata
+  }
  }
