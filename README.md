@@ -1,5 +1,6 @@
 This is the repository for my R Package **balleRs**, which provides tools for
-finding high-power R users.
+finding high-power R users.  It's just getting started - there's only a coule of
+functions here.
 
 To use:
 
