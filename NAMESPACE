@@ -1,3 +1,4 @@
+export(search_in_bioC_packages)
 export(search_in_CRAN_packages)
 import(pander)
 import(plyr)

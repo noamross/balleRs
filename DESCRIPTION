@@ -7,4 +7,5 @@ Maintainer: Noam Ross <noam.ross@gmail.com>
 URL: https://github.com/noamross/balleRs
 License: MIT
 Collate:
-    'balleRs.R'
+    'search_in_bioC_packages.R'
+    'search_in_CRAN_packages.R'

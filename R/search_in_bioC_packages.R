@@ -1,15 +1,12 @@
-names <- c("UC Davis", "ucdavis.edu")
-
 #' @import plyr
 #' @import pander
 #' @export
-search_in_CRAN_packages <- function(names, pandoc=TRUE) {
-
+search_in_bioC_packages <- function(names, pandoc=TRUE) {
+  
   mytemp <- tempfile()
   message("Downloading latest data on repositories...")
-  download.file(paste0(options("repos")$repos,"/web/packages/packages.rds"),
-              mytemp)
-  mydata <- as.data.frame(readRDS(mytemp), row.names=NA, stringsAsFactors=FALSE)
+  download.file("http://bioconductor.org/packages/release/bioc/VIEWS", mytemp)
+  mydata <- as.data.frame(read.dcf(mytemp), row.names=NA, stringsAsFactors=FALSE)
   rows <- matrix(FALSE, nrow(mydata), ncol(mydata))
   for(name in names) {
     rows <- rows | grepl(name, as.matrix(mydata))
@@ -25,4 +22,4 @@ search_in_CRAN_packages <- function(names, pandoc=TRUE) {
   } else {
     mydata
   }
- }
+}
