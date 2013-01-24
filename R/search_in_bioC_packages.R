@@ -4,7 +4,6 @@
 search_in_bioC_packages <- function(names, pandoc=TRUE) {
   
   mytemp <- tempfile()
-  message("Downloading latest data on repositories...")
   download.file("http://bioconductor.org/packages/release/bioc/VIEWS", mytemp)
   mydata <- as.data.frame(read.dcf(mytemp), row.names=NA, stringsAsFactors=FALSE)
   rows <- matrix(FALSE, nrow(mydata), ncol(mydata))

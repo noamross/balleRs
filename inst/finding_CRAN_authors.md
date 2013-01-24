@@ -16,11 +16,10 @@ require(balleRs)
 search_in_CRAN_packages
 ```
 
-```r
+```
 ## function (names, pandoc = TRUE) 
 ## {
 ##     mytemp <- tempfile()
-##     message("Downloading latest data on repositories...")
 ##     download.file(paste0(options("repos")$repos, "/web/packages/packages.rds"), 
 ##         mytemp)
 ##     mydata <- as.data.frame(readRDS(mytemp), row.names = NA, 
@@ -53,10 +52,6 @@ The function takes a vector of strings and returns a nicely formatted table (in 
 
 ```r
 search_in_CRAN_packages(c("UC Davis", "ucdavis.edu"))
-```
-
-```
-## Downloading latest data on repositories...
 ```
 
 
@@ -173,5 +168,34 @@ wq          Exploring water quality       Maintainer: Alan Jassby
 ------------------------------------------------------------------------------
 
 
-I've put this function as the start of a package called ["balleRs" on github](https://github.com/noamross/balleRs).  I want to add a bunch of other tools to find poweR users on the web, such as scraping the R-help archives, Stack Overflow, and Cross-Validated.  Next: Bioconductor authors!
+Now I do the same thing for Bioconductor authors:
+
+
+```r
+search_in_bioC_packages(c("UC Davis", "ucdavis.edu"))
+```
+
+
+------------------------------------------------------------------------------
+Package   Title                       Matches                                 
+--------- --------------------------- ----------------------------------------
+LMGene    LMGene Software for Data    Maintainer: Blythe                      
+          Transformation and          Durbin-Johnson                          
+          Identification of           <bpdurbin@ucdavis.edu>                  
+          Differentially Expressed                                            
+          Genes in Gene Expression    URL:                                    
+          Arrays                      http://dmrocke.ucdavis.edu/software.html
+
+TypeInfo  Optional Type Specification Maintainer: Duncan Temple               
+          Prototype                   Lang                                    
+                                      <duncan@wald.ucdavis.edu>               
+
+qrqc      Quick Read Quality Control  Maintainer: Vince Buffalo               
+                                      <vsbuffalo@ucdavis.edu>                 
+------------------------------------------------------------------------------
+
+
+Pretty cool!  These aren't perfect.  For instance, I know that Duncan Temple Lang, here at the UC Davis Statistics Department, is the author of [a number of other packages](http://crantastic.org/authors/28).  I see on CRAN, though, that he lists his email as `duncan at r-project.org` on the XML package and probably a few others.  [Carl Boettiger has a few, too](http://crantastic.org/authors/2009), but he lists his gmail account.
+
+I've put this function as the start of a package called ["balleRs" on github](https://github.com/noamross/balleRs).  I want to add a bunch of other tools to find poweR users on the web, such as scraping the R-help archives, Stack Overflow, and Cross-Validated.
 
