@@ -1,0 +1,10 @@
+Package: balleRs
+Title: Find High Power R Users
+Description: Tools for locating high-value R users across the web
+Version: 0.1
+Author: Noam Ross <noam.ross@gmail.com>
+Maintainer: Noam Ross <noam.ross@gmail.com>
+URL: https://github.com/noamross/balleRs
+License: MIT
+Collate:
+    'balleRs.R'
