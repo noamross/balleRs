@@ -1,5 +1,4 @@
-#' @import plyr
-#' @import pander
+#' @import plyr pander
 #' @export
 search_in_CRAN_packages <- function(names, pandoc=TRUE) {
 

@@ -6,6 +6,9 @@ Author: Noam Ross <noam.ross@gmail.com>
 Maintainer: Noam Ross <noam.ross@gmail.com>
 URL: https://github.com/noamross/balleRs
 License: MIT
+Depends:
+    knitr,
+    bibtex
 Collate:
     'search_in_bioC_packages.R'
     'search_in_CRAN_packages.R'

@@ -1,5 +1,4 @@
-#' @import plyr
-#' @import pander
+#' @import plyr plyr
 #' @export
 search_in_bioC_packages <- function(names, pandoc=TRUE) {
   
