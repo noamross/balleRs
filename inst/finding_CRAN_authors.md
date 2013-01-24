@@ -1,5 +1,5 @@
-Finding R Local R Authors
-=========================
+Finding Nearby R Package Authors
+===============================
 
 As I'm organizing [my local R users' group](http://www.noamross.net/davis-r-users-group.html), I got interested in learning who at UC Davis was active in the R community.  One thought I had was to look up what R packages were written by people at UC Davis, so I wrote a function to look this up in CRAN:
 
@@ -16,8 +16,8 @@ require(balleRs)
 search_in_CRAN_packages
 ```
 
-```
-## function (names) 
+```r
+## function (names, pandoc = TRUE) 
 ## {
 ##     mytemp <- tempfile()
 ##     message("Downloading latest data on repositories...")
@@ -37,7 +37,12 @@ search_in_CRAN_packages
 ##             ])], sep = "", collapse = "\n"))
 ##     output <- cbind(mydata[, c("Package", "Title")], Matches)
 ##     rownames(output) <- NULL
-##     pandoc.table(output, split.tables = Inf)
+##     if (pandoc) {
+##         pandoc.table(output, split.tables = Inf)
+##     }
+##     else {
+##         mydata
+##     }
 ## }
 ## <environment: namespace:balleRs>
 ```
@@ -168,5 +173,5 @@ wq          Exploring water quality       Maintainer: Alan Jassby
 ------------------------------------------------------------------------------
 
 
-I've put this function as the start of a package called "balleRs" on github
+I've put this function as the start of a package called ["balleRs" on github](https://github.com/noamross/balleRs).  I want to add a bunch of other tools to find poweR users on the web, such as scraping the R-help archives, Stack Overflow, and Cross-Validated.  Next: Bioconductor authors!
 
