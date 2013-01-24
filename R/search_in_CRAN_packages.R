@@ -3,7 +3,7 @@
 search_in_CRAN_packages <- function(names, pandoc=TRUE) {
 
   mytemp <- tempfile()
-  download.file(paste0(options("repos")$repos,"/web/packages/packages.rds"),
+  download.file(paste0(options("repos")$repos[1],"/web/packages/packages.rds"),
               mytemp)
   mydata <- as.data.frame(readRDS(mytemp), row.names=NA, stringsAsFactors=FALSE)
   rows <- matrix(FALSE, nrow(mydata), ncol(mydata))
