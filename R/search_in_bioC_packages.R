@@ -1,4 +1,4 @@
-#' @import plyr plyr
+#' @import plyr pander
 #' @export
 search_in_bioC_packages <- function(names, pandoc=TRUE) {
   
@@ -10,7 +10,7 @@ search_in_bioC_packages <- function(names, pandoc=TRUE) {
     rows <- rows | grepl(name, as.matrix(mydata))
   }
   if(!any(rows)) {
-    Message("No matches found")
+    message("No matches found")
     return()
   }
   matches <- which(rowSums(rows) > 0)

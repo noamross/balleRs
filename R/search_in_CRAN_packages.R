@@ -10,7 +10,7 @@ search_in_CRAN_packages <- function(names, pandoc=TRUE) {
     rows <- rows | grepl(name, as.matrix(mydata))
   }
   if(!any(rows)) {
-    Message("No matches found")
+    message("No matches found")
     return()
   }
   matches <- which(rowSums(rows) > 0)
